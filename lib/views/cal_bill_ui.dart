@@ -453,7 +453,21 @@ class _CalBillUIState extends State<CalBillUI> {
                     ),
                     Expanded(
                       child: ElevatedButton.icon(
-                        onPressed: () {},
+                        onPressed: () {
+                          //ทุกอย่างบนหน้าจอกลับเป็นค่าเริ่มต้นหรือเหมือนเดิม
+                          setState(() {
+                            imgFile = null;
+                            isAdult = false;
+                            isChild = false;
+                            isWater = false;
+                            adultCtrl.clear();
+                            childCtrl.clear();
+                            cokeCtrl.clear();
+                            pureCtrl.clear();
+                            groupWater = 1;
+                            _selectdMember = 'ไม่เป็นสมาชิก';
+                          });
+                        },
                         icon: Icon(
                           Icons.cancel,
                           color: Colors.white,
